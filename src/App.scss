@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+@mixin flexMix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.auth {
+  height: 100vh;
+  display: flex;
+  @include flexMix();
+  .login-card {
+    padding: 20px;
+    width: 400px;
+    margin: 0 auto;
+    height: 30vh;
+    @include flexMix();
+    grid-gap: 35px;
+    border: 1px solid;
+    box-shadow: 2px 3px 30px 6px gray;
+    border-radius: 15px;
+  }
+  button {
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    &:nth-child(1) {
+      transition: 0.5s;
+      &:hover {
+        background-color: rgb(243, 186, 186);
+      }
+    }
+    &:nth-child(2) {
+      transition: 0.5s;
+      &:hover {
+        background-color: #0778e9;
+      }
+    }
+  }
+  .gmail {
+    width: 30px;
+    height: 30px;
+  }
+  .MuiSvgIcon-root {
+    font-size: 30px;
+    color: #0778e9;
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+.parent-loader {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #3f51b5;
+}
+
+.main-section {
+  display: flex;
+  grid-gap: 50px;
+  .list-block {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    grid-gap: 35px;
+    flex-wrap: wrap;
+    .list-item {
+      text-align: center;
+      background-color: white;
+      list-style: none;
+      border: 1px solid black;
+      padding: 15px;
+      border-radius: 2px;
+      width: 200px;
+      height: 200px;
+      position: relative;
+      cursor: pointer;
+      transition: 0.5s;
+      &:hover {
+        background-color: rgb(204, 204, 204);
+      }
+      img {
+        width: 100%;
+      }
+      .MuiIconButton-root {
+        position: absolute;
+        top: -20px;
+        right: -25px;
+        z-index: 15;
+        color: black;
+      }
+    }
+  }
+  .create-block-section {
+    width: 700px;
+    margin: 60px 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    grid-gap: 25px;
+  }
+  .MuiButton-contained {
+    margin-right: 15px;
+  }
+}
+
+@media screen and (max-width: 868px) {
+  .main-section {
+    grid-gap: 25px;
+    .create-block-section {
+      max-width: 500px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      grid-gap: 35px;
+    }
+  }
+}
